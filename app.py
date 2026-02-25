@@ -2,6 +2,7 @@ import streamlit as st
 
 from playlist_logic import (
     DEFAULT_PROFILE,
+    GENRE_OPTIONS,
     Song,
     build_playlists,
     compute_playlist_stats,
@@ -212,7 +213,7 @@ def profile_sidebar():
 
     profile["favorite_genre"] = st.sidebar.selectbox(
         "Favorite genre",
-        options=["rock", "lofi", "pop", "jazz", "electronic", "ambient", "other"],
+        options=GENRE_OPTIONS,
         index=0,
     )
 
@@ -232,7 +233,7 @@ def add_song_sidebar():
     artist = st.sidebar.text_input("Artist")
     genre = st.sidebar.selectbox(
         "Genre",
-        options=["rock", "lofi", "pop", "jazz", "electronic", "ambient", "other"],
+        options=GENRE_OPTIONS,
     )
     energy = st.sidebar.slider("Energy", min_value=1, max_value=10, value=5)
     tags_text = st.sidebar.text_input("Tags (comma separated)")

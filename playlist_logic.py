@@ -3,6 +3,8 @@ from typing import Dict, List, Optional, Tuple
 Song = Dict[str, object]
 PlaylistMap = Dict[str, List[Song]]
 
+GENRE_OPTIONS = ["rock", "lofi", "pop", "jazz", "electronic", "ambient", "other"]
+
 DEFAULT_PROFILE = {
     "name": "Default",
     "hype_min_energy": 7,
